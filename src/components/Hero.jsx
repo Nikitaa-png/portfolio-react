@@ -127,51 +127,45 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — profile image with animations */}
+        {/* Right — profile image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
           style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}
         >
-          {/* Outer container — extra space for orbiting elements */}
-          <div style={{ position: "relative", width: "380px", height: "380px" }}>
-
-            {/* Outermost pulsing ring */}
+          <div style={{ position: "relative", width: "300px", height: "300px" }}>
+            {/* Pulsing ring 1 — outermost */}
             <motion.div
-              animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.55, 0.25] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               style={{
-                position: "absolute", inset: "-20px", borderRadius: "50%",
-                border: "2px solid rgba(124,58,237,0.25)",
+                position: "absolute", inset: "-28px", borderRadius: "50%",
+                border: "2px solid rgba(99,102,241,0.5)",
                 pointerEvents: "none",
               }}
             />
-
-            {/* Second pulsing ring — offset timing */}
+            {/* Pulsing ring 2 — middle, offset timing */}
             <motion.div
-              animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.5, 0.2] }}
-              transition={{ repeat: Infinity, duration: 3.5, delay: 1, ease: "easeInOut" }}
+              animate={{ scale: [1, 1.06, 1], opacity: [0.2, 0.45, 0.2] }}
+              transition={{ repeat: Infinity, duration: 3, delay: 0.8, ease: "easeInOut" }}
               style={{
-                position: "absolute", inset: "-6px", borderRadius: "50%",
-                border: "1.5px solid rgba(99,102,241,0.3)",
+                position: "absolute", inset: "-14px", borderRadius: "50%",
+                border: "1.5px solid rgba(124,58,237,0.4)",
                 pointerEvents: "none",
               }}
             />
-
             {/* Spinning gradient ring */}
             <div className="spin-slow" style={{
-              position: "absolute", inset: "20px", borderRadius: "50%",
-              background: "conic-gradient(from 0deg,#7c3aed,#6366f1,#a78bfa,#c4b5fd,#7c3aed)",
+              position: "absolute", inset: "-6px", borderRadius: "50%",
+              background: "conic-gradient(from 0deg,#7c3aed,#6366f1,#60a5fa,#a78bfa,#7c3aed)",
               padding: "3px",
             }}>
               <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#ede9fe" }} />
             </div>
-
-            {/* Profile image — floating */}
-            <div className="float-animation glow-pulse" style={{
-              position: "absolute", inset: "26px", borderRadius: "50%", overflow: "hidden",
-              boxShadow: "0 8px 40px rgba(124,58,237,0.2)",
+            {/* Profile image — floating only */}
+            <div style={{
+              position: "absolute", inset: "4px", borderRadius: "50%", overflow: "hidden",
             }}>
               <img
                 src="/ChatGPT Image Mar 29, 2026, 03_22_39 PM.png"
@@ -179,114 +173,6 @@ export default function Hero() {
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
-
-            {/* Orbiting dot 1 — top right */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 7, ease: "linear" }}
-              style={{ position: "absolute", inset: "10px", borderRadius: "50%", pointerEvents: "none" }}
-            >
-              <div style={{
-                position: "absolute", top: "4px", left: "50%", transform: "translateX(-50%)",
-                width: "14px", height: "14px", borderRadius: "50%",
-                background: "linear-gradient(135deg,#7c3aed,#a78bfa)",
-                boxShadow: "0 0 14px rgba(124,58,237,0.7)",
-              }} />
-            </motion.div>
-
-            {/* Orbiting dot 2 — bottom left, opposite direction */}
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-              style={{ position: "absolute", inset: "0px", borderRadius: "50%", pointerEvents: "none" }}
-            >
-              <div style={{
-                position: "absolute", bottom: "8px", left: "50%", transform: "translateX(-50%)",
-                width: "10px", height: "10px", borderRadius: "50%",
-                background: "linear-gradient(135deg,#6366f1,#c4b5fd)",
-                boxShadow: "0 0 10px rgba(99,102,241,0.7)",
-              }} />
-            </motion.div>
-
-            {/* Orbiting dot 3 — small, fast */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
-              style={{ position: "absolute", inset: "30px", borderRadius: "50%", pointerEvents: "none" }}
-            >
-              <div style={{
-                position: "absolute", top: "50%", right: "-4px", transform: "translateY(-50%)",
-                width: "8px", height: "8px", borderRadius: "50%",
-                background: "#a78bfa",
-                boxShadow: "0 0 8px rgba(167,139,250,0.8)",
-              }} />
-            </motion.div>
-
-            {/* Floating badge — "React Dev" */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              initial={{ opacity: 0, scale: 0.6 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              style={{
-                position: "absolute", top: "18px", left: "-20px",
-                background: "white",
-                border: "1.5px solid #ddd6fe",
-                borderRadius: "50px",
-                padding: "8px 16px",
-                display: "flex", alignItems: "center", gap: "8px",
-                boxShadow: "0 8px 24px rgba(124,58,237,0.15)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontSize: "16px" }}>⚛️</span>
-              <span style={{ color: "#7c3aed", fontWeight: 700, fontSize: "13px" }}>React Dev</span>
-            </motion.div>
-
-            {/* Floating badge — "Open to Work" */}
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
-              initial={{ opacity: 0, scale: 0.6 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              style={{
-                position: "absolute", bottom: "28px", right: "-24px",
-                background: "white",
-                border: "1.5px solid #ddd6fe",
-                borderRadius: "50px",
-                padding: "8px 16px",
-                display: "flex", alignItems: "center", gap: "8px",
-                boxShadow: "0 8px 24px rgba(99,102,241,0.15)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontSize: "16px" }}>🚀</span>
-              <span style={{ color: "#6366f1", fontWeight: 700, fontSize: "13px" }}>Open to Work</span>
-            </motion.div>
-
-            {/* Floating badge — experience */}
-            <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-              initial={{ opacity: 0, scale: 0.6 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              style={{
-                position: "absolute", bottom: "60px", left: "-28px",
-                background: "linear-gradient(135deg,#7c3aed,#6366f1)",
-                borderRadius: "50px",
-                padding: "8px 16px",
-                display: "flex", alignItems: "center", gap: "8px",
-                boxShadow: "0 8px 20px rgba(124,58,237,0.35)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontSize: "14px" }}>💻</span>
-              <span style={{ color: "white", fontWeight: 700, fontSize: "12px" }}>Frontend Dev</span>
-            </motion.div>
-
           </div>
         </motion.div>
       </div>

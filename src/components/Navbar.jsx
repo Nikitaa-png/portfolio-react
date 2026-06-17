@@ -52,7 +52,7 @@ export default function Navbar() {
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           }}
         >
-          Nikita.dev
+          Portfolio
         </motion.span>
 
         {/* Desktop */}

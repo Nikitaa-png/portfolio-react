@@ -73,7 +73,7 @@ export default function Contact() {
           style={{ display: "flex", flexDirection: "column", gap: "18px" }}
         >
           {[
-            { icon: FaEnvelope, label: "Email", value: "nikita@example.com" },
+            { icon: FaEnvelope, label: "Email", value: "singhnikita89249@gmail.com" },
             { icon: FaMapMarkerAlt, label: "Location", value: "India" },
           ].map(({ icon: Icon, label, value }) => (
             <div key={label} style={{

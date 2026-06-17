@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
         flexWrap: "wrap", gap: "12px",
       }}>
         <span style={{ color: "#7c3aed", fontSize: "14px", opacity: 0.7 }}>
-          © 2026 Nikita. Built with <FaHeart style={{ display: "inline", color: "#e879f9", margin: "0 4px", verticalAlign: "middle" }} size={12} /> and React.
+          © 2026 Nikita. All rights reserved.
         </span>
         <div style={{ display: "flex", gap: "14px" }}>
           {[
